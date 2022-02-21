@@ -149,9 +149,7 @@ label, td, th {
 							<optgroup label="Please select the publisher">
 								<%
 								for (PublisherGrpB publisher : (List<PublisherGrpB>) session.getAttribute("publishers")) {
-									System.out.println("OUT " + publisher.getPublisherId());
 									if (publisher.getPublisherId() == book.getPublisherId()) {
-										System.out.println("IN " + book.getPublisherId());
 								%>
 								<option value="<%=publisher.getPublisherId()%>"
 									selected="selected"><%=publisher.getPublisherName()%></option>
