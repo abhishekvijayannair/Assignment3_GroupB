@@ -90,7 +90,7 @@ table {
 		<table>
 			<thead>
 				<tr>
-					<th>Add Member</th>
+					<th>Edit Member</th>
 					<th></th>
 					<th></th>
 				</tr>

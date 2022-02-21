@@ -20,6 +20,53 @@ import com.assign.grpb.model.MemberGrpB;
  */
 public class MemberDaoGrpB {
 
+	// Method to Add a new Member to the Database
+	public void registerMember(MemberGrpB member) throws ClassNotFoundException, SQLException {
+		final String ADD_MEMBERS_SQL = "INSERT INTO members (name, address, memb_type, memb_date, expiry_date) VALUES (?, ?, ?, ?, ?);";
+		Connection connection = null;
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		try {
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java", "root", "root");
+			PreparedStatement pstmt = connection.prepareStatement(ADD_MEMBERS_SQL);
+			pstmt.setString(1, member.getMemberName());
+			pstmt.setString(2, member.getMemberAddress());
+			pstmt.setString(3, member.getMemberType());
+			pstmt.setDate(4, java.sql.Date.valueOf(member.getMemberJoinDate()));
+			pstmt.setDate(5, java.sql.Date.valueOf(member.getMemberExpireDate()));
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			connection.close();
+		}
+	}
+
+	// Method to Update a Single Member details in Database based on Member ID
+	public void updateMember(MemberGrpB member) throws ClassNotFoundException, SQLException {
+		final String UPDATE_MEMBER_SQL = "UPDATE members SET name = ?, address = ?, memb_type = ?, memb_date = ?, expiry_date = ? WHERE memb_id = ?;";
+		Connection connection = null;
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		try {
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java", "root", "root");
+			PreparedStatement pstmt = connection.prepareStatement(UPDATE_MEMBER_SQL);
+			pstmt.setString(1, member.getMemberName());
+			pstmt.setString(2, member.getMemberAddress());
+			pstmt.setString(3, member.getMemberType());
+			pstmt.setDate(4, java.sql.Date.valueOf(member.getMemberJoinDate()));
+			pstmt.setDate(5, java.sql.Date.valueOf(member.getMemberExpireDate()));
+			pstmt.setInt(6, member.getMemberID());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			connection.close();
+		}
+	}
+
 	// Method to get All members from Database
 	public List<MemberGrpB> getAllMembers() throws ClassNotFoundException, SQLException {
 
@@ -81,53 +128,6 @@ public class MemberDaoGrpB {
 		}
 
 		return member;
-	}
-
-	// Method to Add a new Member to the Database
-	public void addMember(MemberGrpB member) throws ClassNotFoundException, SQLException {
-		final String ADD_MEMBERS_SQL = "INSERT INTO members (name, address, memb_type, memb_date, expiry_date) VALUES (?, ?, ?, ?, ?);";
-		Connection connection = null;
-
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		try {
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java", "root", "root");
-			PreparedStatement pstmt = connection.prepareStatement(ADD_MEMBERS_SQL);
-			pstmt.setString(1, member.getMemberName());
-			pstmt.setString(2, member.getMemberAddress());
-			pstmt.setString(3, member.getMemberType());
-			pstmt.setDate(4, java.sql.Date.valueOf(member.getMemberJoinDate()));
-			pstmt.setDate(5, java.sql.Date.valueOf(member.getMemberExpireDate()));
-			pstmt.executeUpdate();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			connection.close();
-		}
-	}
-
-	// Method to Update a Single Member details in Database based on Member ID
-	public void updateOneMember(MemberGrpB member) throws ClassNotFoundException, SQLException {
-		final String UPDATE_MEMBER_SQL = "UPDATE members SET name = ?, address = ?, memb_type = ?, memb_date = ?, expiry_date = ? WHERE memb_id = ?;";
-		Connection connection = null;
-
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		try {
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java", "root", "root");
-			PreparedStatement pstmt = connection.prepareStatement(UPDATE_MEMBER_SQL);
-			pstmt.setString(1, member.getMemberName());
-			pstmt.setString(2, member.getMemberAddress());
-			pstmt.setString(3, member.getMemberType());
-			pstmt.setDate(4, java.sql.Date.valueOf(member.getMemberJoinDate()));
-			pstmt.setDate(5, java.sql.Date.valueOf(member.getMemberExpireDate()));
-			pstmt.setInt(6, member.getMemberID());
-			pstmt.executeUpdate();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			connection.close();
-		}
 	}
 
 	// Method to Delete a Single Member Details from Database based on Member ID

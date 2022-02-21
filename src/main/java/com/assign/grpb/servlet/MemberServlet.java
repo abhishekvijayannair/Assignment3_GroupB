@@ -121,7 +121,7 @@ public class MemberServlet extends HttpServlet {
 
 		if (operation.equals("add")) { // Operation to do when action is to add new member in database
 			try {
-				memberDao.addMember(model); // Insert new member details to database by accessing Member DAO class
+				memberDao.registerMember(model); // Insert new member details to database by accessing Member DAO class
 			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -130,7 +130,7 @@ public class MemberServlet extends HttpServlet {
 			int memberId = Integer.parseInt(request.getParameter("memb_id"));
 			model.setMemberID(memberId);
 			try {
-				memberDao.updateOneMember(model); // Update one member in database based on the ID
+				memberDao.updateMember(model); // Update one member in database based on the ID
 				request.setAttribute("operation", "after-edit");
 			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
