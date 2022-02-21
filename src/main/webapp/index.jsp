@@ -21,14 +21,14 @@
 			</tr>
 			<tr>
 				<td>
-					<form action='PublisherServlet'>
+					<form action='PublisherServlet' method="get">
 						<input type='submit' value='Publisher Section'>
 					</form>
 				</td>
 			</tr>
 			<tr>	
 				<td>
-					<form action='BookServlet'>
+					<form action='BookServlet' method="get">
 						<input type='submit' value='Book Section'>
 					</form>
 				</td>
