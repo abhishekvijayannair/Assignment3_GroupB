@@ -13,8 +13,12 @@
 }
 
 table {
-	width: 50%;
+	width: 60%;
 	border-collapse: collapse;
+}
+
+label, td, th {
+	text-align: left;
 }
 </style>
 </head>
