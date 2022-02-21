@@ -17,7 +17,7 @@ import com.assign.grpb.model.PublisherGrpB;
 /**
  * Servlet implementation class PublisherServlet
  */
-@WebServlet(description = "Servlet for Add/Update/Get/Delete Publishers", urlPatterns = { "//PublisherServlet" })
+@WebServlet(description = "Servlet for Add/Update/Get/Delete Publishers", urlPatterns = { "/PublisherServlet" })
 public class PublisherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
