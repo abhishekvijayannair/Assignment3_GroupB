@@ -134,11 +134,17 @@ public class BookDaoGrpB {
 	// Method to Delete a Single Book Details from Database based on Book ID
 	public void deleteOneBook(int Id) throws ClassNotFoundException, SQLException {
 		final String DELETE_BOOK_SQL = "DELETE FROM books WHERE book_id = ?;";
+		final String DELETE_CHILD_RECORD_SQL = "DELETE FROM borrow_book_member_map WHERE book_id = ?;";
 		Connection connection = null;
 
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		try {
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java", "root", "root");
+			
+			PreparedStatement conStmt = connection.prepareStatement(DELETE_CHILD_RECORD_SQL);
+			conStmt.setInt(1, Id);
+			conStmt.executeUpdate();
+			
 			PreparedStatement pstmt = connection.prepareStatement(DELETE_BOOK_SQL);
 			pstmt.setInt(1, Id);
 			pstmt.executeUpdate();
