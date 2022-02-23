@@ -14,9 +14,10 @@ import javax.servlet.http.HttpSession;
 import com.assign.grpb.dao.PublisherDaoGrpB;
 import com.assign.grpb.model.PublisherGrpB;
 
-/**
- * Servlet implementation class PublisherServlet
- */
+/* Date -21/02/2022
+Author - Abhishek
+Description - This is the servlet which handles the CRUD operation by using GET and POST method and direct to DAO with Model class
+*/
 @WebServlet(description = "Servlet for Add/Update/Get/Delete Publishers", urlPatterns = { "/PublisherServlet" })
 public class PublisherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

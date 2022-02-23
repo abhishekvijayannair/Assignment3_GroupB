@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +7,11 @@
 <title>Library Management Section</title>
 </head>
 <body>
-	<table>	
-		<thead>	
-			<tr><th>Library Management System</th></tr>
+	<table>
+		<thead>
+			<tr>
+				<th>Library Management System</th>
+			</tr>
 		</thead>
 		<tbody>
 			<tr>
@@ -26,13 +28,20 @@
 					</form>
 				</td>
 			</tr>
-			<tr>	
+			<tr>
 				<td>
 					<form action='BookServlet' method="get">
 						<input type='submit' value='Book Section'>
 					</form>
 				</td>
-			</tr>	
+			</tr>
+			<tr>
+				<td>
+					<form action='BorrowServlet' method="get">
+						<input type='submit' value='Borrow Section'>
+					</form>
+				</td>
+			</tr>
 		</tbody>
 	</table>
 </body>

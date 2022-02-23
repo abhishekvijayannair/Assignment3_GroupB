@@ -2,7 +2,6 @@ package com.assign.grpb.servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -13,15 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.assign.grpb.dao.BookDaoGrpB;
-import com.assign.grpb.dao.MemberDaoGrpB;
 import com.assign.grpb.dao.PublisherDaoGrpB;
 import com.assign.grpb.model.BookGrpB;
-import com.assign.grpb.model.MemberGrpB;
 import com.assign.grpb.model.PublisherGrpB;
 
-/**
- * Servlet implementation class BookServlet
- */
+/* Date -21/02/2022
+Author - Abhishek, Suchitra
+Description - This is the servlet which handles the CRUD operation by using GET and POST method and direct to DAO with Model class
+*/
+
 @WebServlet(description = "Servlet to handle request for Issue/Update/Delete Book", urlPatterns = { "/BookServlet" })
 public class BookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

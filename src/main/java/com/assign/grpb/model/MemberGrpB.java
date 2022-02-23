@@ -5,10 +5,11 @@ package com.assign.grpb.model;
 
 import java.time.LocalDate;
 
-/**
- * @author abhis
- *
- */
+/* 
+ * Date -20/02/2022
+ * Author - Abhishek
+ * Description - This is the model class for Members with Getters and Setters
+*/
 public class MemberGrpB {
 
 	private int memberID;

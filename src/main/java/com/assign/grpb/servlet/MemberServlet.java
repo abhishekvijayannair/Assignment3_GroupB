@@ -16,9 +16,10 @@ import javax.servlet.http.HttpSession;
 import com.assign.grpb.dao.MemberDaoGrpB;
 import com.assign.grpb.model.MemberGrpB;
 
-/**
- * Servlet implementation class MemberServlet
- */
+/* Date -21/02/2022
+Author - Jith, Suchitra
+Description - This is the servlet which handles the CRUD operation by using GET and POST method and direct to DAO with Model class
+*/
 @WebServlet(description = "Servlet for Register/Update/Get Members", urlPatterns = { "/MemberServlet" })
 public class MemberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

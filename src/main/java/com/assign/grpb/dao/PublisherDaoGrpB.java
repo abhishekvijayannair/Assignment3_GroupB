@@ -12,13 +12,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.assign.grpb.model.MemberGrpB;
 import com.assign.grpb.model.PublisherGrpB;
 
-/**
- * @author abhis
- *
- */
+/* Date -20/02/2022
+Author - Sanjay, Kevin
+Description - This code contains the CRUD operations for Publisher Class
+*/
 public class PublisherDaoGrpB {
 
 	// Method to Add a new Publisher to the Database
@@ -119,7 +118,8 @@ public class PublisherDaoGrpB {
 		}
 	}
 
-	// Method to Delete a Single Publisher Details from Database based on Publisher ID
+	// Method to Delete a Single Publisher Details from Database based on Publisher
+	// ID
 	public void deleteOneMember(int Id) throws ClassNotFoundException, SQLException {
 		final String DELETE_PUBLISHER_SQL = "DELETE FROM publishers WHERE pub_id = ?;";
 		Connection connection = null;

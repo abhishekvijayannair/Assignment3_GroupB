@@ -13,12 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.assign.grpb.model.BookGrpB;
-import com.assign.grpb.model.MemberGrpB;
 
-/**
- * @author abhis
- *
- */
+/* Date - 20/02/2022
+Author - Sanjay, Kevin
+Description - This class contains the DAO implementation for Book with CRUD Operations
+*/
+
 public class BookDaoGrpB {
 
 	// Method to get All members from Database

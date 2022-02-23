@@ -14,10 +14,11 @@ import java.util.List;
 
 import com.assign.grpb.model.MemberGrpB;
 
-/**
- * @author abhis
- *
- */
+/* Date -21/02/2022
+Author - Abhishek
+Description - This code contains the methods to do CRUD operation on Members class
+*/
+
 public class MemberDaoGrpB {
 
 	// Method to Add a new Member to the Database

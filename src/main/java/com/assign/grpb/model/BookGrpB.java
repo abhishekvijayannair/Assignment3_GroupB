@@ -3,10 +3,11 @@
  */
 package com.assign.grpb.model;
 
-/**
- * @author abhis
- *
- */
+/* 
+ * Date -20/02/2022
+ * Author - Abhishek
+ * Description - This is the model class for Book with Getters and Setters
+*/
 public class BookGrpB {
 	private int bookId;
 	private String bookTitle;
